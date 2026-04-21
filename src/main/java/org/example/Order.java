@@ -17,6 +17,10 @@ public record Order(
         }
     }
 
+    public Order(String id, String customer, String product, double price, int quantity, Status status) {
+        this(id, customer, product, price, quantity, status, LocalDate.now());
+    }
+
     public double total() {
         return price * quantity;
     }
